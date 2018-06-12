@@ -1,0 +1,31 @@
+connector.allowed.credentials: socratesai-203492:5iYOETVoPQwosO4l
+
+server:
+  use-forward-headers: true
+  tomcat:
+    remote_ip_header: x-forwarded-for
+  port: 8082
+
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+    sensitive: false
+  health:
+      enabled: true
+      sensitive: false
+      time-to-live: 5000
+
+info:
+  build:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+    
+logging:
+  file: @logging.file@
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    ai.socrates: INFO
+    org.hibernate: ERROR

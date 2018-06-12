@@ -1,0 +1,5 @@
+/target/
+/.settings/
+/core-engine.pid
+.idea/
+core-engine.iml
