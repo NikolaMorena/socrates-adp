@@ -19,7 +19,7 @@
 		<testng.version>6.10</testng.version>
 		<org.assertj.core.version>3.5.2</org.assertj.core.version>
 		<org.mockito.core.version>1.10.19</org.mockito.core.version>
-		<logging.file>var/log/socrates-assistant/adp-connector.log</logging.file>
+		<logging.file>/var/log/socrates-assistant/adp-connector.log</logging.file>
 	</properties>
 
 	<dependencies>
