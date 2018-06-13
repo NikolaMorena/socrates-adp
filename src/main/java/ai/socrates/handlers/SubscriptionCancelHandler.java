@@ -2,7 +2,6 @@ package ai.socrates.handlers;
 
 import static com.appdirect.sdk.appmarket.events.APIResult.success;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.slf4j.Logger;
@@ -18,10 +17,12 @@ public class SubscriptionCancelHandler implements AppmarketEventHandler<Subscrip
 	
 	@Override
 	public APIResult handle(SubscriptionCancel event) {
+		logger.info("Subscription accountId={} canceled", event.getAccountIdentifier());
+		
 		ObjectMapper om= new ObjectMapper();
 		try {
 			String eventSerialized=om.writeValueAsString(event);
-			logger.info("Subscription canceled: {}", eventSerialized);
+			logger.info(eventSerialized);
 		} catch (IOException e) {
 			logger.error("Logging new subscription failed", e);
 		}

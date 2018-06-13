@@ -17,10 +17,11 @@ public class SubscriptionOrderHandler implements AppmarketEventHandler<Subscript
 	private static final Logger logger =LoggerFactory.getLogger(SubscriptionOrderHandler.class);
 	@Override
 	public APIResult handle(SubscriptionOrder event) {
+		logger.info("{} made new subscription in the name of {}", event.getPurchaserInfo().getFirstName(), event.getCompanyInfo().getName());
 		ObjectMapper om= new ObjectMapper();
 		try {
 			String eventSerialized=om.writeValueAsString(event);
-			logger.info("New subscription: {}", eventSerialized);
+			logger.info(eventSerialized);
 		} catch (IOException e) {
 			logger.error("Logging new subscription failed", e);
 		}

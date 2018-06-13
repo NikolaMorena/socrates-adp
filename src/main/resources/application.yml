@@ -24,6 +24,9 @@ info:
     
 logging:
   file: @logging.file@
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %msg%n"
   level:
     root: ERROR
     org.springframework.web: ERROR
