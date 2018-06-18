@@ -32,3 +32,5 @@ logging:
     org.springframework.web: ERROR
     ai.socrates: INFO
     org.hibernate: ERROR
+    
+ADP_MARKETPLACE_LOG_FILE: /var/log/socrates-assistant/adp-connector.log
